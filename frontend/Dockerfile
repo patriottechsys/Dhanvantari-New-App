@@ -4,8 +4,11 @@ COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 
-# Hardcode the API URL at build time (required for Next.js NEXT_PUBLIC_ vars)
-ENV NEXT_PUBLIC_API_URL=https://dhanvantari-api.onrender.com
+# Hardcode the API URL at build time (required for Next.js NEXT_PUBLIC_ vars).
+# Override via Render dashboard → Environment → NEXT_PUBLIC_API_URL if the
+# backend lives elsewhere (e.g. a PR preview with a -suffixed hostname).
+ARG NEXT_PUBLIC_API_URL=https://dhanvantari-api-pxgv.onrender.com
+ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
 
 RUN npm run build
 
