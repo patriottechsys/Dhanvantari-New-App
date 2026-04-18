@@ -107,7 +107,7 @@ app.include_router(therapies.plan_package_router,  prefix="/api/plans",      tag
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok", "version": settings.APP_VERSION}
+    return {"status": "ok", "version": settings.APP_VERSION, "build": "cors-regex-v2"}
 
 
 # ── Static files (logo uploads) ───────────────────────────────────────────────
