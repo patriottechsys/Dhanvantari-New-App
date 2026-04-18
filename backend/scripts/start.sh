@@ -47,5 +47,10 @@ PY
 echo "[start] running alembic migrations..."
 alembic upgrade head
 
+echo "[start] seeding community libraries (idempotent)..."
+python scripts/seed.py           || echo "[start] seed.py failed (non-fatal)"
+python scripts/seed_therapies.py || echo "[start] seed_therapies.py failed (non-fatal)"
+python seed_pranayama.py         || echo "[start] seed_pranayama.py failed (non-fatal)"
+
 echo "[start] launching uvicorn on port ${PORT:-8747}"
 exec uvicorn app.main:app --host 0.0.0.0 --port "${PORT:-8747}"
