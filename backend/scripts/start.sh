@@ -52,6 +52,7 @@ python scripts/seed.py                         || echo "[start] seed.py failed (
 python scripts/seed_therapies.py               || echo "[start] seed_therapies.py failed (non-fatal)"
 python seed_pranayama.py                       || echo "[start] seed_pranayama.py failed (non-fatal)"
 python scripts/seed_supplement_image_urls.py   || echo "[start] seed_supplement_image_urls.py failed (non-fatal)"
+python scripts/seed_demo.py                    || echo "[start] seed_demo.py failed (non-fatal)"
 
 echo "[start] launching uvicorn on port ${PORT:-8747}"
 exec uvicorn app.main:app --host 0.0.0.0 --port "${PORT:-8747}"
