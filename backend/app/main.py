@@ -8,46 +8,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from datetime import datetime, timedelta, timezone
-from sqlalchemy import select
-
 from app.core.config import settings
-from app.core.database import engine, Base, AsyncSessionLocal
+from app.core.database import engine, Base
 from app.api.routes import auth, practitioners, patients, plans, checkins, portal, ai, billing, supplements, recipes, followups, consultation_notes, assessments, yoga, pranayama, intake, therapies
-
-
-async def _ensure_demo_user():
-    """Create the demo practitioner if it doesn't already exist."""
-    from app.models.practitioner import Practitioner, SubscriptionTier
-    from app.core.security import hash_password
-
-    async with AsyncSessionLocal() as db:
-        result = await db.execute(
-            select(Practitioner).where(Practitioner.email == "demo@dhanvantari.app")
-        )
-        if result.scalar_one_or_none():
-            return  # already exists
-
-        demo = Practitioner(
-            name="Dr. Vaidya Demo",
-            email="demo@dhanvantari.app",
-            password_hash=hash_password("demo1234"),
-            practice_name="Dhanvantari Demo Practice",
-            designation="BAMS",
-            subscription_tier=SubscriptionTier.PRACTICE,
-            subscription_active=True,
-            trial_ends_at=datetime.now(timezone.utc) + timedelta(days=365),
-        )
-        db.add(demo)
-        await db.commit()
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Create tables on startup (use Alembic for production migrations)
+    # Create tables on startup (Alembic is authoritative; this covers models
+    # added without migrations to avoid cold-start crashes).
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-    await _ensure_demo_user()
     yield
     await engine.dispose()
 
@@ -107,7 +78,7 @@ app.include_router(therapies.plan_package_router,  prefix="/api/plans",      tag
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok", "version": settings.APP_VERSION, "build": "cors-regex-v2"}
+    return {"status": "ok", "version": settings.APP_VERSION, "build": "demo-seed-v1"}
 
 
 # ── Static files (logo uploads) ───────────────────────────────────────────────
