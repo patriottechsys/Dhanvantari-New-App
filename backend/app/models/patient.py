@@ -68,6 +68,7 @@ class Patient(Base):
     checkin_token:  Mapped["CheckInToken | None"]    = relationship(back_populates="patient", uselist=False, cascade="all, delete-orphan")  # noqa: F821
     followups:           Mapped[list["FollowUp"]]           = relationship(back_populates="patient", lazy="dynamic", cascade="all, delete-orphan")  # noqa: F821
     consultation_notes:  Mapped[list["ConsultationNote"]]  = relationship(back_populates="patient", lazy="dynamic", cascade="all, delete-orphan")  # noqa: F821
+    appointments:        Mapped[list["Appointment"]]        = relationship(back_populates="patient", lazy="dynamic", cascade="all, delete-orphan")  # noqa: F821
 
     @property
     def full_name(self) -> str:

@@ -127,3 +127,40 @@ def send_followup_reminder(
         })
     except Exception as e:
         logger.error("Failed to send follow-up reminder: %s", e)
+
+
+def send_appointment_reminder(
+    practitioner_name: str,
+    patient_name: str,
+    email: str,
+    when: str,
+    appointment_type: str,
+    location: str | None,
+) -> None:
+    """Email a patient an appointment confirmation / reminder."""
+    if not settings.RESEND_API_KEY:
+        logger.info("RESEND_API_KEY not set — skipping appointment reminder to %s", email)
+        return
+
+    try:
+        resend = _get_resend()
+        resend.Emails.send({
+            "from": f"{settings.EMAIL_FROM_NAME} <{settings.EMAIL_FROM}>",
+            "to": [email],
+            "subject": f"Appointment confirmation — {when}",
+            "html": f"""
+            <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto; padding: 32px 24px;">
+                <h2 style="color: #8B6914; margin-bottom: 8px;">Namaste, {patient_name}</h2>
+                <p>Your {appointment_type.replace('_', ' ')} appointment with
+                   <strong>{practitioner_name}</strong> is confirmed for <strong>{when}</strong>.</p>
+                {f'<p>Location: {location}</p>' if location else ''}
+                <p style="color: #888; font-size: 13px; margin-top: 32px;">
+                    Please reach out if you need to reschedule.<br>
+                    — {practitioner_name}
+                </p>
+            </div>
+            """,
+        })
+        logger.info("Appointment reminder sent to %s", email)
+    except Exception as e:
+        logger.error("Failed to send appointment reminder to %s: %s", email, e)
