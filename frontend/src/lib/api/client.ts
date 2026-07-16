@@ -136,6 +136,16 @@ export const followupsApi = {
   delete: (id: number)                => api.delete(`/api/followups/${id}`),
 };
 
+export const appointmentsApi = {
+  list:         (params?: { start?: string; end?: string; status?: string; type?: string; patient_id?: number }) =>
+    api.get("/api/appointments", { params }),
+  get:          (id: number)                => api.get(`/api/appointments/${id}`),
+  create:       (data: unknown)             => api.post("/api/appointments", data),
+  update:       (id: number, data: unknown) => api.patch(`/api/appointments/${id}`, data),
+  remove:       (id: number)                => api.delete(`/api/appointments/${id}`),
+  sendReminder: (id: number)                => api.post(`/api/appointments/${id}/send-reminder`),
+};
+
 export const aiApi = {
   chat:                (data: unknown)        => api.post("/api/ai/chat", data),
   draftPlan:           (patientId: number)    => api.post(`/api/ai/draft-plan/${patientId}`, {}),
