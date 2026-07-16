@@ -1,6 +1,6 @@
 from datetime import datetime, timezone, timedelta
 import pytest
-from sqlalchemy import select
+from sqlalchemy import select, func
 from app.models.patient import Patient
 from app.models.appointment import Appointment, AppointmentType, AppointmentStatus
 
@@ -27,5 +27,9 @@ async def test_create_appointment_persists_with_enum_values(db_session, practiti
     assert row.appointment_type == AppointmentType.CONSULTATION
     assert row.appointment_type.value == "consultation"
     assert row.status.value == "scheduled"
-    # relationships load
-    assert (await db_session.get(Patient, patient.id)).appointments.count() == 1
+    # appointment is linked to the patient (async-safe count — dynamic relations
+    # can't be .count()'d directly inside an async session)
+    count = await db_session.scalar(
+        select(func.count()).select_from(Appointment).where(Appointment.patient_id == patient.id)
+    )
+    assert count == 1

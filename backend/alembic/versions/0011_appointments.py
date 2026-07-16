@@ -11,19 +11,8 @@ down_revision = "0010"
 branch_labels = None
 depends_on = None
 
-appointment_type = sa.Enum(
-    "consultation", "follow_up", "therapy", "panchakarma", name="appointmenttype"
-)
-appointment_status = sa.Enum(
-    "scheduled", "confirmed", "completed", "cancelled", "no_show", name="appointmentstatus"
-)
-
 
 def upgrade() -> None:
-    bind = op.get_bind()
-    appointment_type.create(bind, checkfirst=True)
-    appointment_status.create(bind, checkfirst=True)
-
     op.create_table(
         "appointments",
         sa.Column("id", sa.Integer, primary_key=True),
@@ -31,8 +20,8 @@ def upgrade() -> None:
         sa.Column("patient_id", sa.Integer, sa.ForeignKey("patients.id"), nullable=False, index=True),
         sa.Column("start_at", sa.DateTime(timezone=True), nullable=False, index=True),
         sa.Column("end_at", sa.DateTime(timezone=True), nullable=False),
-        sa.Column("appointment_type", appointment_type, nullable=False, server_default="consultation"),
-        sa.Column("status", appointment_status, nullable=False, server_default="scheduled"),
+        sa.Column("appointment_type", sa.Enum("consultation", "follow_up", "therapy", "panchakarma", name="appointmenttype"), nullable=False, server_default="consultation"),
+        sa.Column("status", sa.Enum("scheduled", "confirmed", "completed", "cancelled", "no_show", name="appointmentstatus"), nullable=False, server_default="scheduled"),
         sa.Column("reason", sa.String(300)),
         sa.Column("notes", sa.Text),
         sa.Column("location", sa.String(200)),
@@ -46,6 +35,5 @@ def upgrade() -> None:
 
 def downgrade() -> None:
     op.drop_table("appointments")
-    bind = op.get_bind()
-    appointment_status.drop(bind, checkfirst=True)
-    appointment_type.drop(bind, checkfirst=True)
+    op.execute("DROP TYPE IF EXISTS appointmentstatus")
+    op.execute("DROP TYPE IF EXISTS appointmenttype")
