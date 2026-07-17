@@ -10,6 +10,7 @@ from app.models.yoga import YogaAsana, VideoReference, PlanYogaAsana
 from app.models.pranayama import Pranayama, PlanPranayama
 from app.models.intake import IntakeToken, IntakeSubmission
 from app.models.therapy import Therapy, ServicePackage, PackageTherapy, PlanTherapy, PlanServicePackage
+from app.models.appointment import Appointment, AppointmentType, AppointmentStatus
 
 __all__ = [
     "Practitioner", "Patient", "HealthProfile",
