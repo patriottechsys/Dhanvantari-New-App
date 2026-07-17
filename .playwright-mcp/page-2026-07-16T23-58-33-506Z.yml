@@ -1,0 +1,31 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: ॐ
+        - generic [ref=e6]: Dhanvantari
+      - generic [ref=e7]:
+        - blockquote [ref=e8]: "\"The physician who knows the science of life, who has acquired skill in treatment, who possesses purity of mind — he is the best physician.\""
+        - paragraph [ref=e9]: — Charaka Samhita
+      - paragraph [ref=e11]: Rooted in tradition. Powered by intelligence.
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - heading "Welcome back" [level=1] [ref=e16]
+        - paragraph [ref=e17]: Sign in to your practice dashboard
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - text: Email
+          - textbox "Email" [ref=e20]:
+            - /placeholder: vaidya@example.com
+        - generic [ref=e21]:
+          - text: Password
+          - textbox "Password" [ref=e22]:
+            - /placeholder: ••••••••
+        - button "Sign in" [ref=e23]
+      - generic [ref=e24]: or
+      - button "Try Demo" [ref=e29]
+      - paragraph [ref=e30]:
+        - text: New practitioner?
+        - link "Create an account" [ref=e31] [cursor=pointer]:
+          - /url: /signup
+  - alert [ref=e32]

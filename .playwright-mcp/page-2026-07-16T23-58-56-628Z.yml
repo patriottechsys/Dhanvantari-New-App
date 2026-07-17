@@ -1,0 +1,106 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e32]
+  - generic [ref=e33]:
+    - complementary [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: ॐ
+        - generic [ref=e37]:
+          - paragraph [ref=e38]: Dhanvantari
+          - paragraph [ref=e39]: Meenakshi Ayurveda
+      - navigation [ref=e40]:
+        - link "Dashboard" [ref=e41] [cursor=pointer]:
+          - /url: /dashboard
+        - link "Patients" [ref=e47] [cursor=pointer]:
+          - /url: /patients
+        - link "Follow-ups" [ref=e53] [cursor=pointer]:
+          - /url: /followups
+        - link "Appointments" [ref=e57] [cursor=pointer]:
+          - /url: /calendar
+        - link "Services" [ref=e60] [cursor=pointer]:
+          - /url: /services
+        - link "Supplements" [ref=e66] [cursor=pointer]:
+          - /url: /supplements
+        - link "Recipes" [ref=e70] [cursor=pointer]:
+          - /url: /recipes
+        - link "Pranayama" [ref=e76] [cursor=pointer]:
+          - /url: /pranayama
+        - link "Yoga" [ref=e81] [cursor=pointer]:
+          - /url: /yoga
+        - link "Intake Forms" [ref=e86] [cursor=pointer]:
+          - /url: /intake
+        - link "AI Assistant" [ref=e90] [cursor=pointer]:
+          - /url: /ai-assistant
+        - link "Settings" [ref=e94] [cursor=pointer]:
+          - /url: /settings
+      - generic [ref=e99]:
+        - generic [ref=e100]: MS
+        - generic [ref=e101]:
+          - paragraph [ref=e102]: Meenakshi Sharma
+          - paragraph [ref=e103]: practice plan
+        - button "Sign out" [ref=e104]
+    - main [ref=e109]:
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - heading "Good evening, Meenakshi" [level=1] [ref=e112]
+          - paragraph [ref=e113]: Meenakshi Ayurveda · Thursday, July 16
+        - generic [ref=e114]:
+          - generic [ref=e122]:
+            - paragraph [ref=e123]: "3"
+            - paragraph [ref=e124]: Total Patients
+          - generic [ref=e130]:
+            - paragraph [ref=e131]: "2"
+            - paragraph [ref=e132]: Active Plans
+          - generic [ref=e138]:
+            - paragraph [ref=e139]: "3"
+            - paragraph [ref=e140]: Upcoming Follow-ups
+          - generic [ref=e146]:
+            - paragraph [ref=e147]: "3"
+            - paragraph [ref=e148]: Added This Month
+        - button [ref=e150]:
+          - generic [ref=e155]:
+            - text: Generate AI Practice Overview
+            - paragraph [ref=e156]: Get an AI summary of your patients' progress and priorities for today
+        - generic [ref=e157]:
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - heading "Recent Patients" [level=2] [ref=e160]
+              - button "View all" [ref=e161]
+            - generic [ref=e162]:
+              - generic [ref=e163] [cursor=pointer]:
+                - generic [ref=e164]: SM
+                - generic [ref=e165]:
+                  - paragraph [ref=e166]: Shuva Mukhopadhyay
+                  - paragraph [ref=e167]: Added 28 minutes ago
+                - generic [ref=e168]: Kapha-Vata
+              - generic [ref=e169] [cursor=pointer]:
+                - generic [ref=e170]: AP
+                - generic [ref=e171]:
+                  - paragraph [ref=e172]: Arjun Patel
+                  - paragraph [ref=e173]: Added 28 minutes ago
+                - generic [ref=e174]: Vata
+              - generic [ref=e175] [cursor=pointer]:
+                - generic [ref=e176]: PV
+                - generic [ref=e177]:
+                  - paragraph [ref=e178]: Priya Venkatesh
+                  - paragraph [ref=e179]: Added 28 minutes ago
+                - generic [ref=e180]: Pitta
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - heading "Upcoming Follow-ups" [level=2] [ref=e183]
+              - button "View all" [ref=e184]
+            - generic [ref=e185]:
+              - generic [ref=e186]:
+                - generic [ref=e188]:
+                  - paragraph [ref=e189]: Shuva Mukhopadhyay
+                  - paragraph [ref=e190]: 3-week protocol review
+                - generic [ref=e191]: Jul 17
+              - generic [ref=e192]:
+                - generic [ref=e194]:
+                  - paragraph [ref=e195]: Priya Venkatesh
+                  - paragraph [ref=e196]: Initial consultation follow-up
+                - generic [ref=e197]: Jul 20
+              - generic [ref=e198]:
+                - generic [ref=e200]:
+                  - paragraph [ref=e201]: Arjun Patel
+                  - paragraph [ref=e202]: 4-week Vata protocol review
+                - generic [ref=e203]: Aug 2

@@ -1,0 +1,138 @@
+- generic [active] [ref=f1e1]:
+  - alert [ref=f1e2]
+  - generic [ref=f1e3]:
+    - complementary [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - generic [ref=f1e6]: ॐ
+        - generic [ref=f1e7]:
+          - paragraph [ref=f1e8]: Dhanvantari
+          - paragraph [ref=f1e9]: Meenakshi Ayurveda
+      - navigation [ref=f1e10]:
+        - link "Dashboard" [ref=f1e11] [cursor=pointer]:
+          - /url: /dashboard
+        - link "Patients" [ref=f1e17] [cursor=pointer]:
+          - /url: /patients
+        - link "Follow-ups" [ref=f1e23] [cursor=pointer]:
+          - /url: /followups
+        - link "Appointments" [ref=f1e27] [cursor=pointer]:
+          - /url: /calendar
+        - link "Services" [ref=f1e30] [cursor=pointer]:
+          - /url: /services
+        - link "Supplements" [ref=f1e36] [cursor=pointer]:
+          - /url: /supplements
+        - link "Recipes" [ref=f1e40] [cursor=pointer]:
+          - /url: /recipes
+        - link "Pranayama" [ref=f1e46] [cursor=pointer]:
+          - /url: /pranayama
+        - link "Yoga" [ref=f1e51] [cursor=pointer]:
+          - /url: /yoga
+        - link "Intake Forms" [ref=f1e56] [cursor=pointer]:
+          - /url: /intake
+        - link "AI Assistant" [ref=f1e60] [cursor=pointer]:
+          - /url: /ai-assistant
+        - link "Settings" [ref=f1e64] [cursor=pointer]:
+          - /url: /settings
+      - generic [ref=f1e69]:
+        - generic [ref=f1e70]: MS
+        - generic [ref=f1e71]:
+          - paragraph [ref=f1e72]: Meenakshi Sharma
+          - paragraph [ref=f1e73]: practice plan
+        - button "Sign out" [ref=f1e74]
+    - main [ref=f1e79]:
+      - generic [ref=f1e80]:
+        - generic [ref=f1e81]:
+          - generic [ref=f1e82]:
+            - generic [ref=f1e83]:
+              - heading "Appointments" [level=1] [ref=f1e84]
+              - generic [ref=f1e85]:
+                - button [ref=f1e86]
+                - button "Today" [ref=f1e87]
+                - button [ref=f1e88]
+              - generic [ref=f1e89]: Jul 13 – Jul 19, 2026
+            - generic [ref=f1e90]:
+              - generic [ref=f1e91]:
+                - button "day" [ref=f1e92]
+                - button "week" [ref=f1e93]
+                - button "month" [ref=f1e94]
+              - button "New appointment" [ref=f1e95]
+          - generic [ref=f1e96]:
+            - button "All" [ref=f1e97]
+            - button "Consultation" [ref=f1e98]
+            - button "Follow-up" [ref=f1e99]
+            - button "Therapy" [ref=f1e100]
+            - button "Panchakarma" [ref=f1e101]
+        - generic [ref=f1e102]:
+          - generic [ref=f1e103]:
+            - generic [ref=f1e104]:
+              - paragraph [ref=f1e105]: Patients
+              - textbox "Search…" [ref=f1e107]
+            - generic [ref=f1e108]:
+              - paragraph [ref=f1e109]: Drag a patient onto a time slot →
+              - button "Shuva Mukhopadhyay" [ref=f1e369]
+              - button "Arjun Patel" [ref=f1e378]
+              - button "Priya Venkatesh" [ref=f1e387]
+          - generic [ref=f1e112]:
+            - generic [ref=f1e114]:
+              - generic [ref=f1e115]: Mon
+              - generic [ref=f1e116]: "13"
+            - generic [ref=f1e117]:
+              - generic [ref=f1e118]: Tue
+              - generic [ref=f1e119]: "14"
+            - generic [ref=f1e120]:
+              - generic [ref=f1e121]: Wed
+              - generic [ref=f1e122]: "15"
+            - generic [ref=f1e123]:
+              - generic [ref=f1e124]: Thu
+              - generic [ref=f1e125]: "16"
+            - generic [ref=f1e126]:
+              - generic [ref=f1e127]: Fri
+              - generic [ref=f1e128]: "17"
+            - generic [ref=f1e129]:
+              - generic [ref=f1e130]: Sat
+              - generic [ref=f1e131]: "18"
+            - generic [ref=f1e132]:
+              - generic [ref=f1e133]: Sun
+              - generic [ref=f1e134]: "19"
+            - generic [ref=f1e135]:
+              - generic [ref=f1e136]: 6am
+              - generic [ref=f1e137]: 6:30
+              - generic [ref=f1e138]: 7am
+              - generic [ref=f1e139]: 7:30
+              - generic [ref=f1e140]: 8am
+              - generic [ref=f1e141]: 8:30
+              - generic [ref=f1e142]: 9am
+              - generic [ref=f1e143]: 9:30
+              - generic [ref=f1e144]: 10am
+              - generic [ref=f1e145]: 10:30
+              - generic [ref=f1e146]: 11am
+              - generic [ref=f1e147]: 11:30
+              - generic [ref=f1e148]: 12pm
+              - generic [ref=f1e149]: 12:30
+              - generic [ref=f1e150]: 1pm
+              - generic [ref=f1e151]: 1:30
+              - generic [ref=f1e152]: 2pm
+              - generic [ref=f1e153]: 2:30
+              - generic [ref=f1e154]: 3pm
+              - generic [ref=f1e155]: 3:30
+              - generic [ref=f1e156]: 4pm
+              - generic [ref=f1e157]: 4:30
+              - generic [ref=f1e158]: 5pm
+              - generic [ref=f1e159]: 5:30
+              - generic [ref=f1e160]: 6pm
+              - generic [ref=f1e161]: 6:30
+              - generic [ref=f1e162]: 7pm
+              - generic [ref=f1e163]: 7:30
+            - generic [ref=f1e251]:
+              - button [ref=f1e396]:
+                - paragraph [ref=f1e397]: Shuva Mukhopadhyay
+                - paragraph [ref=f1e398]: Consultation
+              - button [ref=f1e400]:
+                - paragraph [ref=f1e401]: Arjun Patel
+                - paragraph [ref=f1e402]: Follow-up
+              - button [ref=f1e404]:
+                - paragraph [ref=f1e405]: Priya Venkatesh
+                - paragraph [ref=f1e406]: Therapy
+            - button [ref=f1e408]:
+              - paragraph [ref=f1e409]: Shuva Mukhopadhyay
+              - paragraph [ref=f1e410]: Panchakarma
+        - status [ref=f1e368]
